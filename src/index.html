@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP War</title>
+  </head>
+  <body>
+    <table id="img" border="0" cellpadding="1" cellspacing="0"></table>
+    <script>
+      const table = document.getElementById('img');
+
+      for (let row = 1; row <= 10; row += 1) {
+        const tr = document.createElement('tr');
+
+        for (let col = 1; col <= 10; col += 1) {
+          const td = document.createElement('td');
+          const img = document.createElement('img');
+
+          img.src = `assets/scott_${row.toString().padStart(2, '0')}_${col
+            .toString()
+            .padStart(2, '0')}.png`;
+
+          td.appendChild(img);
+          tr.appendChild(td);
+        }
+
+        table.appendChild(tr);
+      }
+    </script>
+  </body>
+</html>
